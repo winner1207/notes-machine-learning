@@ -1,7 +1,6 @@
 # 机器学习笔记
 
 ## 简介
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/info.png)
 来自人工智能权威学者Andrew Ng吴恩达教授《机器学习》的学习笔记，可以在[斯坦福大学公开课：机器学习课程](斯坦福大学公开课：机器学习课程 "http://open.163.com/special/opencourse/machinelearning.html")观看。
 
 ## 目录

@@ -1,5 +1,5 @@
 # 监督学习 vs 无监督学习
-
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/info.png)
 - ## 监督学习(Supervised Learning)
 在监督学习中，给定一组数据，我们知道正确的输出结果应该是什么样子，并且知道在输入和输出之间有着一个特定的关系。这么说可能理解起来不是很清晰，没关系，后面有具体的例子。
 
