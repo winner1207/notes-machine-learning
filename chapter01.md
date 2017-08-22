@@ -7,7 +7,7 @@
 - 监督学习的分类
 
 监督学习可分为“回归”和“分类”问题。
-![](resource/chapter01_1.png)
+![](https://github.com/winner1207/notes-machine-learning/tree/master/resource/chapter01_1.png)
 
 在回归问题中，我们会预测一个连续值。也就是说我们试图将输入变量和输出用一个连续函数对应起来；而在分类问题中，我们会预测一个离散值，我们试图将输入变量与离散的类别对应起来。
 
@@ -17,7 +17,7 @@
 - 回归
 
 通过房地产市场的数据，预测一个给定面积的房屋的价格就是一个回归问题。这里我们可以把价格看成是面积的函数，它是一个连续的输出值。 但是，当把上面的问题改为“预测一个给定面积的房屋的价格是否比一个特定的价格高或者低”的时候，这就变成了一个分类问题, 因为此时的输出是‘高’或者‘低’两个离散的值。
-![](resource/chapter01_2.png)
+![](https://github.com/winner1207/notes-machine-learning/tree/master/resource/chapter01_2.png)
 
 - 分类
 
@@ -26,10 +26,10 @@
 分类问题的输出可以多于两个，比如在该例子中可以有{0,1,2,3}四种输出，分别对应{良性, 第一类肿瘤, 第二类肿瘤, 第三类肿瘤}。
 
 下图中上下两个图只是两种画法。第一个是有两个轴，Y轴表示是否是恶性瘤，X轴表示瘤的大小; 第二个是只用一个轴，但是用了不同的标记，用O表示良性瘤，X表示恶性瘤。
-![](resource/chapter01_3.png)
+![](https://github.com/winner1207/notes-machine-learning/tree/master/resource/chapter01_3.png)
 
 在这个例子中特征只有一个，那就是瘤的大小。 有时候也有两个或者多个特征, 例如下图， 有“年龄”和“肿瘤大小”两个特征。(还可以有其他许多特征，如下图右侧所示)
-![](resource/chapter01_4.png)
+![](https://github.com/winner1207/notes-machine-learning/tree/master/resource/chapter01_4.png)
 
 
 
