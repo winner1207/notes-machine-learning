@@ -131,9 +131,7 @@ $$
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/22.png)
 
 对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：
-$$
-\frac{\delta}{\delta\theta_j}J(\theta_0\theta_1)=\frac{\delta}{\delta\theta_j}\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2
-$$
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/23.png)
 
 则算法改写成：
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/24.png)
