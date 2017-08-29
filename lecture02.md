@@ -131,10 +131,17 @@ $$
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/22.png)
 
 对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/23.png)
+$$
+\frac{\delta}{\delta\theta_j}J(\theta_0\theta_1)=\frac{\delta}{\delta\theta_j}\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2
+$$
 
 则算法改写成：
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/24.png)
+Repeat{
+$$
+\theta_0:=\theta_0-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)
+\theta_1:=\theta_1-\alpha\frac{1}{m}\sum_{i=1}^{m}((h_\theta(x^i)-y^i)*x^i)
+$$
+}
 
 我们刚刚使用的算法，有时也称为批量梯度下降。实际上，在机器学习中，通常不太会给算法起名字，但这个名字”批量梯度下降”，指的是在梯度下降的每一步中，我们都用到了所有的训练样本，在梯度下降中，在计算微分求导项时，我们需要进行求和运算，所以，在每一个单独的梯度下降中，我们最终都要计算这样一个东西，这个项需要对所有 m 个训练样本求和。因此，批量梯度下降法这个名字说明了我们需要考虑所有这一"批"训练样本，而事实上，有时也有其他类型的梯度下降法，不是这种"批量"型的，不考虑整个的训练集，而是每次只关注训练集中的一些小的子集。在后面的课程中，我们也将介绍这些方法。
 
