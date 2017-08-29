@@ -6,11 +6,11 @@
 
 让我们通过一个例子来开始：这个例子是预测住房价格的，我们要使用一个数据集，数据集包含俄勒冈州波特兰市的住房价格。在这里，我要根据不同房屋尺寸所售出的价格，画出我的数据集。比方说，如果你朋友的房子是 1250 平方尺大小，你要告诉他们这房子能卖多少钱。那么，你可以做的一件事就是构建一个模型，也许是条直线，从这个数据模型上来看，也许你可以告诉你的朋友，他能以大约 220000(美元)左右的价格卖掉这个房子。这就是监督学习算法的一个例子。
 
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/1.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/1.png)  
 它被称作监督学习是因为对于每个数据来说，我们给出了“正确的答案”，即告诉我们：根据我们的数据来说，房子实际的价格是多少，而且，更具体来说，这是一个回归问题。回归一词指的是，我们根据之前的数据预测出一个准确的输出值，对于这个例子就是价格，同时，还有另一种最常见的监督学习方式，叫做分类问题，当我们想要预测离散的输出值，例如，我们正在寻找癌症肿瘤，并想要确定肿瘤是良性的还是恶性的，这就是 0/1 离散输出的问题。更进一步来说，在监督学习中我们有一个数据集，这个数据集被称训练集。
 
 以之前的房屋交易问题为例，假使我们回归问题的训练集（Training Set）如下表所示：
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/2.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/2.png)  
 我们将要用来描述这个回归问题的标记如下:
 - m 代表训练集中实例的数量
 - x 代表特征/输入变量
@@ -40,7 +40,7 @@
 我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。 即使得代价函数$J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^m(h_\theta(x^i)-y^i)^2$最小
 
 我们绘制一个等高线图，三个坐标分别为$\theta_0$和$\theta_1$和$J(\theta_0,\theta_1)$：
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/8.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/8.png)  
 则可以看出在三维空间中存在一个使得$J(\theta_0,\theta_1)$最小的点。
 
 代价函数也被称作平方误差函数，有时也被称为平方误差代价函数。我们之所以要求出误差的平方和，是因为误差平方代价函数，对于大多数问题，特别是回归问题，都是一个合理的选择。还有其他的代价函数也能很好地发挥作用，但是平方误差代价函数可能是解决回归问题最常用的手段了。
@@ -55,10 +55,10 @@
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/10.png)
 
 ## 2.4 代价函数的直观理解 II
-这节课中，我们将更深入地学习代价函数的作用，这段视频的内容假设你已经认识等高线图，如果你对等高线图不太熟悉的话，这段视频中的某些内容你可能会听不懂，但不要紧，如果你跳过这段视频的话，也没什么关系，不听这节课对后续课程理解影响不大。
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/11.png)
-代价函数的样子，等高线图，则可以看出在三维空间中存在一个使得$J(\theta_0,\theta_1)$最小的点。
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/12.png)
+这节课中，我们将更深入地学习代价函数的作用，这段视频的内容假设你已经认识等高线图，如果你对等高线图不太熟悉的话，这段视频中的某些内容你可能会听不懂，但不要紧，如果你跳过这段视频的话，也没什么关系，不听这节课对后续课程理解影响不大。  
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/11.png)  
+代价函数的样子，等高线图，则可以看出在三维空间中存在一个使得$J(\theta_0,\theta_1)$最小的点。  
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/12.png)  
 通过这些图形，我希望你能更好地理解这些代价函数 J 所表达的值是什么样的，它们对应的假设是什么样的，以及什么样的假设对应的点，更接近于代价函数 J 的最小值。
 
 当然，我们真正需要的是一种有效的算法，能够自动地找出这些使代价函数 J 取最小值的参数$\theta_0$和$\theta_1$来。
@@ -74,14 +74,14 @@
 想象一下你正站立在山的这一点上，站立在你想象的公园这座红色山上，在梯度下降算法中，我们要做的就是旋转 360 度，看看我们的周围，并问自己要在某个方向上，用小碎步尽快下山。这些小碎步需要朝什么方向？如果我们站在山坡上的这一点，你看一下周围，你会发现最佳的下山方向，你再看看周围，然后再一次想想，我应该从什么方向迈着小碎步下山？然后你按照自己的判断又迈出一步，重复上面的步骤，从这个新的点，你环顾四周，并决定从什么方向将会最快下山，然后又迈进了一小步，并依此类推，直到你接近局部最低点的位置。
 
 批量梯度下降（batch gradient descent）算法的公式为：
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/14.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/14.png)  
 其中 α 是学习率（learning rate），它决定了我们沿着能让代价函数下降程度最大的方向向下迈出的步子有多大，在批量梯度下降中，我们每一次都同时让所有的参数减去学习速率乘以代价函数的导数。
 
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/15.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/15.png)  
 在梯度下降算法中，还有一个更微妙的问题，梯度下降中，我们要更新$\theta_0$$\theta_1$，当 j=0和 j=1 时，会产生更新，所以你将更新$J\theta_0$和$J\theta_1$。实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要同时更新$\theta_0$和$\theta_1$，我的意思是在这个等式中，我们要这样更新：$\theta_0:=\theta_0$，并更新$\theta_1:=\theta_1$。
 
 实现方法是：你应该计算公式右边的部分，通过那一部分计算出$\theta_0$和$\theta_1$的值，然后同时更新$\theta_0$和$\theta_1$。让我进一步阐述这个过程：
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/16.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/16.png)  
 在梯度下降算法中，这是正确实现同时更新的方法。我不打算解释为什么你需要同时更新，同时更新是梯度下降中的一种常用方法。我们之后会讲到，同步更新是更自然的实现方法。当人们谈到梯度下降时，他们的意思就是同步更新。
 
 在接下来的视频中，我们要进入这个微分项的细节之中。我已经写了出来但没有真正定义，如果你已经修过微积分课程，如果你熟悉偏导数和导数，这其实就是这个微分项：
@@ -118,7 +118,7 @@ $$
 假设你将$\theta_1$初始化在局部最低点，在这儿，它已经在一个局部的最优处或局部最低点。结果是局部最优点的导数将等于零，因为它是那条切线的斜率。这意味着你已经在局部最优点，它使得$\theta_1$不再改变，也就是新的$\theta_1$等于原来的$\theta_1$，因此，如果你的参数已经处于局部最低点，那么梯度下降法更新其实什么都没做，它不会改变参数的值。这也解释了为什么即使学习速率 α 保持不变时，梯度下降也可以收敛到局部最低点。
 
 我们来看一个例子，这是代价函数 J(θ)。
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/21.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/21.png)  
 我想找到它的最小值，首先初始化我的梯度下降算法，在那个品红色的点初始化，如果我更新一步梯度下降，也许它会带我到这个点，因为这个点的导数是相当陡的。现在，在这个绿色的点，如果我再更新一步，你会发现我的导数，也即斜率，是没那么陡的。随着我接近最低点，我的导数越来越接近零，所以，梯度下降一步后，新的导数会变小一点点。然后我想再梯度下降一步，在这个绿点，我自然会用一个稍微跟刚才在那个品红点时比，再小一点的一步，到了新的红色点，更接近全局最低点了，因此这点的导数会比在绿点时更小。所以，我再进行一步梯度下降时，我的导数项是更小的，$\theta_1$ 更新的幅度就会更小。所以随着梯度下降法的运行，你移动的幅度会自动变得越来越小，直到最终移动幅度非常小，你会发现，已经收敛到局部极小值。
 
 回顾一下，在梯度下降法中，当我们接近局部最低点时，梯度下降法会自动采取更小的幅度，这是因为当我们接近局部最低点时，很显然在局部最低时导数等于零，所以当我们接近局部最低时，导数值会自动变得越来越小，所以梯度下降将自动采取较小的幅度，这就是梯度下降的做法。所以实际上没有必要再另外减小 α。
@@ -127,10 +127,10 @@ $$
 
 ## 梯度下降的线性回归
 在以前的视频中我们谈到关于梯度下降算法，梯度下降是很常用的算法，它不仅被用在线性回归上和线性回归模型、平方误差代价函数。在这段视频中，我们要将梯度下降和代价函数结合。我们将用到此算法，并将其应用于具体的拟合直线的线性回归算法里。
-梯度下降算法和线性回归算法比较如图：
+梯度下降算法和线性回归算法比较如图：  
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/22.png)
 
-对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：
+对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：  
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/23.png)
 
 则算法改写成：  
