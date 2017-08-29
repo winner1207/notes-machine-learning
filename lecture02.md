@@ -80,7 +80,7 @@
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/15.png)  
 在梯度下降算法中，还有一个更微妙的问题，梯度下降中，我们要更新$\theta_0$$\theta_1$，当 j=0和 j=1 时，会产生更新，所以你将更新$J\theta_0$和$J\theta_1$。实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要同时更新$\theta_0$和$\theta_1$，我的意思是在这个等式中，我们要这样更新：$\theta_0:=\theta_0$，并更新$\theta_1:=\theta_1$。
 
-实现方法是：你应该计算公式右边的部分，通过那一部分计算出$\theta_0$和$\theta_1$的值，然后同时更新$\theta_0$和$\theta_1$。让我进一步阐述这个过程：
+实现方法是：你应该计算公式右边的部分，通过那一部分计算出$\theta_0$和$\theta_1$的值，然后同时更新$\theta_0$和$\theta_1$。让我进一步阐述这个过程：  
 ![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture02/16.png)  
 在梯度下降算法中，这是正确实现同时更新的方法。我不打算解释为什么你需要同时更新，同时更新是梯度下降中的一种常用方法。我们之后会讲到，同步更新是更自然的实现方法。当人们谈到梯度下降时，他们的意思就是同步更新。
 
