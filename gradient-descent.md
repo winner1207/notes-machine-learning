@@ -55,4 +55,8 @@
 　　$J(\theta_0, \theta_1..., \theta_n) = \frac{1}{2m}\sum\limits_{i=0}^{m}(h_\theta(x_0, x_1, ...x_n) - y_i)^2$  
 　　则在算法过程步骤1中对于θi 的偏导数计算如下：  
 　　$\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)= \frac{1}{m}\sum\limits_{j=0}^{m}(h_\theta(x_0^{j}, x_1^{j}, ...x_n^{j}) - y_j)x_i^{j}$  
-　　由于样本中没有$x_0$上式中令所有的x_0^{j}为1.  
+　　由于样本中没有$x_0$上式中令所有的$x_0^{j}$为1.  
+　　步骤4中$\theta_i$的更新表达式如下：  
+　　\theta_i = \theta_i - \alpha\frac{1}{m}\sum\limits_{j=0}^{m}(h_\theta(x_0^{j}, x_1^{j}, ...x_n^{j}) - y_j)x_i^{j}$  
+　　从这个例子可以看出当前点的梯度方向是由所有的样本决定的，加$\frac{1}{m}$是为了好理解。由于步长也为常数，他们的乘机也为常数，所以这里$\alpha\frac{1}{m}$可以用一个常数表示。    
+　　在下面第4节会详细讲到的梯度下降法的变种，他们主要的区别就是对样本的采用方法不同。这里我们采用的是用所有样本。  
