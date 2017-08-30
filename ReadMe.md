@@ -26,3 +26,7 @@
 - 【第19讲】 [微分动态规划及线性二次型高斯](lecture19.md)
 - 【第20讲】 [策略搜索算法](lecture20.md)
 
+---
+- 【参考笔记1】 [梯度下降（Gradient Descent）小结](gradient-descent.md)
+
+
