@@ -1,11 +1,11 @@
 # 一、监督学习 vs 无监督学习
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture01/info.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture01/info.png)  
 - ## 监督学习(Supervised Learning)
 　　在监督学习中，给定一组数据，我们知道正确的输出结果应该是什么样子，并且知道在输入和输出之间有着一个特定的关系。这么说可能理解起来不是很清晰，没关系，后面有具体的例子。
 
 - ### 监督学习的分类
 　　监督学习可分为“回归”和“分类”问题。
-![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture01/1.png)
+![](https://github.com/winner1207/notes-machine-learning/raw/master/resource/lecture01/1.png)  
 　　在回归问题中，我们会预测一个连续值。也就是说我们试图将输入变量和输出用一个连续函数对应起来；而在分类问题中，我们会预测一个离散值，我们试图将输入变量与离散的类别对应起来。
 　　下面举两个例子，就会非常清楚这几个概念了。
 
