@@ -50,9 +50,9 @@
 　　4）更新所有的θ，对于θi，其更新表达式如下。更新完毕后继续转入步骤1.$\theta_i = \theta_i - \alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
 
 　　下面用线性回归的例子来具体描述梯度下降。假设我们的样本是：  
-　　$(x_1^{(0)}, x_2^{(0)}, ...x_n^{(0)}, y_0), (x_1^{(1)}, x_2^{(1)}, ...x_n^{(1)},y_1), ... (x_1^{(m)}, x_2^{(m)}, ...x_n^{(m)}, y_n)$
+　　$(x_1^{(0)}, x_2^{(0)}, ...x_n^{(0)}, y_0), (x_1^{(1)}, x_2^{(1)}, ...x_n^{(1)},y_1), ... (x_1^{(m)}, x_2^{(m)}, ...x_n^{(m)}, y_n)$  
 　　损失函数如前面先决条件所述：  
-　　$J(\theta_0, \theta_1..., \theta_n) = \frac{1}{2m}\sum\limits_{i=0}^{m}(h_\theta(x_0, x_1, ...x_n) - y_i)^2$
-　　则在算法过程步骤1中对于θi 的偏导数计算如下：     
-　　$\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)= \frac{1}{m}\sum\limits_{j=0}^{m}(h_\theta(x_0^{j}, x_1^{j}, ...x_n^{j}) - y_j)x_i^{j}$
+　　$J(\theta_0, \theta_1..., \theta_n) = \frac{1}{2m}\sum\limits_{i=0}^{m}(h_\theta(x_0, x_1, ...x_n) - y_i)^2$  
+　　则在算法过程步骤1中对于θi 的偏导数计算如下：  
+　　$\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)= \frac{1}{m}\sum\limits_{j=0}^{m}(h_\theta(x_0^{j}, x_1^{j}, ...x_n^{j}) - y_j)x_i^{j}$  
 　　由于样本中没有$x_0$上式中令所有的x_0^{j}为1.  
