@@ -45,7 +45,7 @@
 
 　　2）用步长乘以损失函数的梯度，得到当前位置下降的距离，即$\alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$对应于前面登山例子中的某一步。
 
-　　3）确定是否所有的$\theta_i$梯度下降的距离都小于ε，如果小于ε则算法终止，当前所有的θi(i=0,1,...n)即为最终结果。否则进入步骤4.
+　　3）确定是否所有的$\theta_i$梯度下降的距离都小于ε，如果小于ε则算法终止，当前所有的$\theta_i(i=0,1,...n)$即为最终结果。否则进入步骤4.
 
 　　4）更新所有的$\theta$，对于$\theta_i$，其更新表达式如下。更新完毕后继续转入步骤1.$\theta_i = \theta_i - \alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
 
@@ -53,7 +53,7 @@
 　　$(x_1^{(0)}, x_2^{(0)}, ...x_n^{(0)}, y_0), (x_1^{(1)}, x_2^{(1)}, ...x_n^{(1)},y_1), ... (x_1^{(m)}, x_2^{(m)}, ...x_n^{(m)}, y_n)$  
 　　损失函数如前面先决条件所述：  
 　　$J(\theta_0, \theta_1..., \theta_n) = \frac{1}{2m}\sum\limits_{i=0}^{m}(h_\theta(x_0, x_1, ...x_n) - y_i)^2$  
-　　则在算法过程步骤1中对于θi 的偏导数计算如下：  
+　　则在算法过程步骤1中对于$\theta_i$的偏导数计算如下：  
 　　$\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)= \frac{1}{m}\sum\limits_{j=0}^{m}(h_\theta(x_0^{j}, x_1^{j}, ...x_n^{j}) - y_j)x_i^{j}$  
 　　由于样本中没有$x_0$上式中令所有的$x_0^{j}$为1.  
 　　步骤4中$\theta_i$的更新表达式如下：  
