@@ -45,7 +45,7 @@
 
 　　2）用步长乘以损失函数的梯度，得到当前位置下降的距离，即$\alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$对应于前面登山例子中的某一步。
 
-　　3）确定是否所有的$\theta_i$,梯度下降的距离都小于ε，如果小于ε则算法终止，当前所有的θi(i=0,1,...n)即为最终结果。否则进入步骤4.
+　　3）确定是否所有的$\theta_i$梯度下降的距离都小于ε，如果小于ε则算法终止，当前所有的θi(i=0,1,...n)即为最终结果。否则进入步骤4.
 
 　　4）更新所有的$\theta$，对于$\theta_i$，其更新表达式如下。更新完毕后继续转入步骤1.$\theta_i = \theta_i - \alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
 
