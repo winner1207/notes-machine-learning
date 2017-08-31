@@ -41,13 +41,13 @@
 　　同样是线性回归，对应于上面的假设函数，损失函数为：$J(\theta_0, \theta_1..., \theta_n) = \frac{1}{2m}\sum\limits_{i=0}^{m}(h_\theta(x_0, x_1, ...x_n) - y_i)^2$  
 　　2. 算法相关参数初始化：主要是初始化$\theta_0,\theta_1,\theta_n$,算法终止距离$\epsilon$以及步长$\alpha$。在没有任何先验知识的时候，我喜欢将所有的$\theta$初始化为0， 将步长初始化为1。在调优的时候再优化。  
 　　3. 算法过程：  
-　　1）确定当前位置的损失函数的梯度，对于θi,其梯度表达式如下：$\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
+　　1）确定当前位置的损失函数的梯度，对于$\theta_i$,其梯度表达式如下：$\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
 
 　　2）用步长乘以损失函数的梯度，得到当前位置下降的距离，即$\alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$对应于前面登山例子中的某一步。
 
-　　3）确定是否所有的θi,梯度下降的距离都小于ε，如果小于ε则算法终止，当前所有的θi(i=0,1,...n)即为最终结果。否则进入步骤4.
+　　3）确定是否所有的$\theta_i$,梯度下降的距离都小于ε，如果小于ε则算法终止，当前所有的θi(i=0,1,...n)即为最终结果。否则进入步骤4.
 
-　　4）更新所有的θ，对于θi，其更新表达式如下。更新完毕后继续转入步骤1.$\theta_i = \theta_i - \alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
+　　4）更新所有的$\theta$，对于$\theta_i$，其更新表达式如下。更新完毕后继续转入步骤1.$\theta_i = \theta_i - \alpha\frac{\partial}{\partial\theta_i}J(\theta_0, \theta_1..., \theta_n)$
 
 　　下面用线性回归的例子来具体描述梯度下降。假设我们的样本是：  
 　　$(x_1^{(0)}, x_2^{(0)}, ...x_n^{(0)}, y_0), (x_1^{(1)}, x_2^{(1)}, ...x_n^{(1)},y_1), ... (x_1^{(m)}, x_2^{(m)}, ...x_n^{(m)}, y_n)$  
