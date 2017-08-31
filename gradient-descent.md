@@ -59,4 +59,31 @@
 　　步骤4中$\theta_i$的更新表达式如下：  
 　　$\theta_i = \theta_i - \alpha\frac{1}{m}\sum\limits_{j=0}^{m}(h_\theta(x_0^{j}, x_1^{j}, ...x_n^{j}) - y_j)x_i^{j}$  
 　　从这个例子可以看出当前点的梯度方向是由所有的样本决定的，加$\frac{1}{m}$是为了好理解。由于步长也为常数，他们的乘机也为常数，所以这里$\alpha\frac{1}{m}$可以用一个常数表示。    
-　　在下面第4节会详细讲到的梯度下降法的变种，他们主要的区别就是对样本的采用方法不同。这里我们采用的是用所有样本。  
+　　在下面第4节会详细讲到的梯度下降法的变种，他们主要的区别就是对样本的采用方法不同。这里我们采用的是用所有样本。 
+
+#### 3.3.2 梯度下降法的矩阵方式描述
+　　这一部分主要讲解梯度下降法的矩阵方式表述，相对于3.3.1的代数法，要求有一定的矩阵分析的基础知识，尤其是矩阵求导的知识。    
+　　1. 先决条件： 和3.3.1类似， 需要确认优化模型的假设函数和损失函数。对于线性回归，假设函数$h_\theta(x_1, x_2, ...x_n) = \theta_0 + \theta_{1}x_1 + ... + \theta_{n}x_{n}$的矩阵表达方式为：  
+　　$h_\mathbf{\theta}(\mathbf{x}) = \mathbf{X\theta}$，其中， 假设函数$h_\mathbf{\theta}(\mathbf{X})$为mx1的向量,θ为nx1的向量，里面有n个代数法的模型参数。X为mxn维的矩阵。m代表样本的个数，n代表样本的特征数。  
+　　损失函数的表达式为：$J(\mathbf\theta) = \frac{1}{2}(\mathbf{X\theta} - \mathbf{Y})^T(\mathbf{X\theta} - \mathbf{Y})$, 其中Y是样本的输出向量，维度为mx1.  
+　　2. 算法相关参数初始化: θ向量可以初始化为默认值，或者调优后的值。算法终止距离ε，步长α和3.3.1比没有变化。  
+　　3. 算法过程：  
+　　1）确定当前位置的损失函数的梯度，对于θ向量,其梯度表达式如下：$\frac{\partial}{\partial\mathbf\theta}J(\mathbf\theta)$  
+　　2）用步长乘以损失函数的梯度，得到当前位置下降的距离，即$\alpha\frac{\partial}{\partial\theta}J(\theta)$对应于前面登山例子中的某一步。  
+　　3）确定θ向量里面的每个值,梯度下降的距离都小于ε，如果小于ε则算法终止，当前θ向量即为最终结果。否则进入步骤4.  
+　　4）更新θ向量，其更新表达式如下。更新完毕后继续转入步骤1.  
+$$
+\mathbf\theta= \mathbf\theta - \alpha\frac{\partial}{\partial\theta}J(\mathbf\theta)
+$$
+　　还是用线性回归的例子来描述具体的算法过程。  
+　　损失函数对于θ向量的偏导数计算如下：  
+$$
+\frac{\partial}{\partial\mathbf\theta}J(\mathbf\theta) = \mathbf{X}^T(\mathbf{X\theta} - \mathbf{Y})
+$$
+　　步骤4中θ向量的更新表达式如下：$\mathbf\theta= \mathbf\theta - \alpha\mathbf{X}^T(\mathbf{X\theta} - \mathbf{Y})$  
+　　对于3.3.1的代数法，可以看到矩阵法要简洁很多。这里面用到了矩阵求导链式法则，和两个矩阵求导的公式。  
+　　公式1：$\frac{\partial}{\partial\mathbf{X}}(\mathbf{XX^T}) =2\mathbf{X}$  
+　　公式2：$\frac{\partial}{\partial\mathbf\theta}(\mathbf{X\theta}) =\mathbf{X^T}$  
+　　如果需要熟悉矩阵求导建议参考张贤达的《矩阵分析与应用》一书。
+
+### 3.4 梯度下降的算法调优
